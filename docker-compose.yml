@@ -45,6 +45,14 @@ services:
       SERVER_NAME: kibana
     ports:
       - 5601:5601
+  vpn:
+    restart: always
+    container_name: ipsec-vpn-server
+    image: hwdsl2/ipsec-vpn-server:latest
+    privileged: true
+    ports:
+      - 500:500/udp
+      - 4500:4500/udp
 volumes:
   my-db:
     driver: local
