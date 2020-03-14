@@ -50,6 +50,8 @@ services:
     container_name: ipsec-vpn-server
     image: hwdsl2/ipsec-vpn-server:latest
     privileged: true
+    env_file:
+      - vpn.env
     ports:
       - 500:500/udp
       - 4500:4500/udp
