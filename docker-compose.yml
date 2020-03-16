@@ -68,7 +68,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      - "$PWD/conf":/etc/nginx
+      - ./conf:/etc/nginx
 
 volumes:
   my-db:
