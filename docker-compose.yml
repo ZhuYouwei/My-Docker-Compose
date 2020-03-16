@@ -62,6 +62,14 @@ services:
     ports:
       - 500:500/udp
       - 4500:4500/udp
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    ports:
+      - 8080:80
+    volumes:
+      - "$PWD/conf":/etc/nginx
+
 volumes:
   my-db:
     driver: local
